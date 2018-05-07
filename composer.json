@@ -1,0 +1,21 @@
+{
+    "name": "componentsforyii2/webupload",
+    "description": "YII2+webuploader",
+    "type": "library",
+    "authors": [
+        {
+            "name": "helong",
+            "email": "yuanshuai@mybns.cn"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "bower-asset/fex-webuploader":"^0.1.5",
+        "bower-asset/cropper":"^2.3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "componentsforyii2\\webupload\\": ""
+        }
+    }
+}
