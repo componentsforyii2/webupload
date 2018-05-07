@@ -16,6 +16,6 @@ class YsWebuploaderAsset extends AssetBundle
     	'yii\web\JqueryAsset',
         'yii\bootstrap\BootstrapAsset',
         'yii\bootstrap\BootstrapPluginAsset',
-        'yuanshuai\yscomponents\webuploader\CropperAsset'
+        'componentsforyii2\webupload\CropperAsset'
     ];
 }

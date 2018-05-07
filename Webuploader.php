@@ -15,7 +15,7 @@
 		public $value;
 		public $imageUrl;
 		public $boxid = 'packerImage';
-		public $viewPath = "@vendor/yuanshuai/ys-components/webuploader/views";
+		public $viewPath = "@vendor/componentsforyii2/webupload/views";
 		public function init(){
 			parent::init();
 			if (!$this->server) {

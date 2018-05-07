@@ -3,7 +3,7 @@ namespace componentsforyii2\webupload;
 use yii\web\AssetBundle;
 class WebuploaderAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/bower/webuploader_fex/dist';
+    public $sourcePath = '@vendor/bower/fex-webuploader/dist';
     public $css = [
         'webuploader.css'
     ];
