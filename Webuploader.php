@@ -16,6 +16,7 @@
 		public $imageUrl;
 		public $boxid = 'packerImage';
 		public $viewPath = "@vendor/componentsforyii2/webupload/views";
+		public $compress = "false";
 		public function init(){
 			parent::init();
 			if (!$this->server) {
@@ -37,6 +38,7 @@
 				'auto'=>'false',
 				'multiple'=>'true',
 				'accept'=>$accept,
+                'compress'=>is_array($this->compress) ? Json::encode($this->compress) : $this->compress,
 			);
 			if (!$this->options) {
 				$this->options = $options;

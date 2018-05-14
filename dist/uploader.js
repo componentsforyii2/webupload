@@ -18,7 +18,8 @@ var upload = function(key,imageEdit,type){
             },
             // 只允许选择图片文件。
             accept: options.accept,
-            formData: options.formData
+            formData: options.formData,
+            compress: options.compress,
         });
         // 当有文件添加进来的时候
         var _that = this;
@@ -87,8 +88,23 @@ var upload = function(key,imageEdit,type){
         this.uploader.on( 'uploadSuccess', function( file , response ) {
             var inputHtml = '<input type="hidden" class="success" name="'+options.name+'" value="'+response.data.filepath+'"/>';
             $( '#'+file.id ).addClass('upload-state-done');
-            if (response.code === 200) {
+            if (response.code == 200) {
                 $( '#'+file.id ).append(inputHtml);
+            }
+            if (response.code == 500) {
+                var $li = $( '#'+file.id ),
+                    $error = $li.find('div.error');
+
+                // 避免重复创建
+                if ( !$error.length ) {
+                    $error = $('<div class="error"></div>').appendTo( $li );
+                }
+                $error.text(response.message);
+                _that.uploader.reset();
+                this.state = 'pending';
+                setTimeout(function(){
+                    $li.remove();
+                },2000);
             }
         });
         // 文件上传失败删除图片。

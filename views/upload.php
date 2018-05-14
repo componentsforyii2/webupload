@@ -16,6 +16,7 @@
             accept:{$options['accept']},
             name:'{$name}',
             formData:{$formData},
+            compress:{$options['compress']},
         });
         var _upload{$key} = upload{$key};
         $(function(){
